@@ -1,4 +1,41 @@
 {
-  "extends": [":dependencyDashboard"],
-  "enabled": true
+  "extends": [
+    ":dependencyDashboard",
+    ":prHourlyLimit2",
+    ":prConcurrentLimit20"
+  ],
+  "schedule": ["at any time"],
+  "prConcurrentLimit": 3,
+  "packageRules": [
+    {
+      "description": "Update external dependencies",
+      "matchManagers": ["maven", "npm", "gradle"],
+      "enabled": true
+    },
+    {
+      "description": "Update internal dependencies",
+      "matchManagers": ["maven", "gradle"],
+      "enabled": true
+    },
+    {
+      "description": "Update Dockerfile image versions",
+      "matchManagers": ["dockerfile"],
+      "enabled": true
+    },
+    {
+      "description": "Update Dockerfile imported packages",
+      "matchManagers": ["dockerfile"],
+      "enabled": true
+    },
+    {
+      "description": "Update Helm chart dependencies",
+      "matchManagers": ["helm"],
+      "enabled": true
+    },
+    {
+      "description": "Update Azure Pipelines shared scripts",
+      "matchPaths": ["azure-pipelines/*.yml"],
+      "enabled": true
+    }
+  ]
 }
