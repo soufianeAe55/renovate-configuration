@@ -9,17 +9,7 @@
   "packageRules": [
     {
       "description": "Update external dependencies",
-      "matchManagers": ["maven", "npm", "gradle"],
-      "enabled": true
-    },
-    {
-      "description": "Update internal dependencies",
-      "matchManagers": ["maven", "gradle"],
-      "enabled": true
-    },
-    {
-      "description": "Update Dockerfile image versions",
-      "matchManagers": ["dockerfile"],
+      "matchManagers": ["maven", "npm"],
       "enabled": true
     },
     {
