@@ -9,7 +9,7 @@
   "packageRules": [
     {
       "description": "Update external dependencies",
-      "matchManagers": ["maven", "npm"],
+      "matchManagers": ["maven"],
       "enabled": true
     },
     {
